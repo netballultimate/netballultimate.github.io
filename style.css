@@ -165,6 +165,26 @@ svg{display:block}
 .foot{background:var(--deep);box-shadow:inset 0 2px 0 var(--gold)}
 .foot-inner{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;padding:22px 0;font-family:var(--display);font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--ice)}
 
+/* ---------- privacy / legal page ---------- */
+.legal{padding:130px 0 100px;background:radial-gradient(120% 60% at 50% 0%,var(--mid) 0%,var(--navy) 60%)}
+.legal-inner{max-width:760px}
+.legal .title{margin-bottom:30px}
+.legal-lead{font-size:19px;margin:0 0 10px}
+.legal h2{margin:48px 0 12px;padding-left:14px;border-left:5px solid var(--gold);font-family:var(--display);font-weight:normal;font-size:20px;letter-spacing:.1em;text-transform:uppercase;color:#fff}
+.legal p,.legal li{color:var(--text)}
+.legal p{margin:0 0 14px}
+.legal ul{margin:0 0 14px;padding-left:22px}
+.legal li{margin-bottom:6px}
+.legal li::marker{color:var(--gold)}
+.legal strong{color:#fff;font-weight:600}
+.legal a{color:var(--cyan);text-decoration:underline;text-underline-offset:3px;word-break:break-word}
+.foot a:hover{color:#fff}
+.links-static a{color:var(--ice)}
+@media (max-width:760px){
+  .nav .links-static{position:static;flex-direction:row;padding:0;background:none;box-shadow:none;transform:none;z-index:auto;font-size:12px}
+  .nav .links-static a:not(.btn){padding:0;border:0}
+}
+
 /* ---------- lightbox + toast ---------- */
 .lightbox{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:16px;background:rgba(4,16,42,.94)}
 .lightbox[hidden]{display:none}
