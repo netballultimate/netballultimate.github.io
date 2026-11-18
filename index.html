@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Netball Ultimate</title>
+<meta name="description" content="Netball Ultimate: real 7-a-side netball on your phone, PC or browser. Build your team, train your athletes and play friends online.">
+<meta name="theme-color" content="#061633">
+<link rel="icon" href="img/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <a class="brand" href="#top"><img src="img/icon.png" alt="" width="36" height="36"><span>Netball <b>Ultimate</b></span></a>
+  <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <nav class="links" id="links">
+    <a href="#features">Features</a>
+    <a href="#positions">Positions</a>
+    <a href="#screens">Screens</a>
+    <a href="#modes">Modes</a>
+    <a class="btn btn-gold btn-sm" href="#play">Play now</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="rays" aria-hidden="true"></div>
+    <canvas id="court" class="hero-court" aria-hidden="true"></canvas>
+    <div class="wrap hero-inner">
+      <h1 class="logo reveal">
+        <span class="w1">Netball</span>
+        <span class="w2">Ultimate</span>
+      </h1>
+      <p class="lead reveal">Seven positions. One ball. Three seconds.</p>
+      <div class="cta reveal">
+        <a class="play" href="#play"><span>Play</span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4l13 8-13 8z"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="section" id="features">
+    <div class="wrap">
+      <p class="eyebrow">Why it plays different</p>
+      <h2 class="title t-cyan">Netball, properly</h2>
+      <div class="cards">
+        <article class="card c-gold reveal">
+          <div class="art"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18M5.6 5.6c3.5 3.5 3.5 9.3 0 12.8M18.4 5.6c-3.5 3.5-3.5 9.3 0 12.8"/></svg></div>
+          <div class="band"><h3>Real rules</h3><p>Three seconds to pass, footwork, offside zones, contact and obstruction. If it's a whistle on court, it's a whistle here.</p></div>
+        </article>
+        <article class="card c-cyan reveal">
+          <div class="art"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg></div>
+          <div class="band"><h3>Smart teammates</h3><p>Defenders mark ball-side, attackers hold and make short leads. Every pass is a read, not a guess.</p></div>
+        </article>
+        <article class="card c-orange reveal">
+          <div class="art"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></div>
+          <div class="band"><h3>Skill shots</h3><p>Chest, lob and low passes. Time your shot on the release meter, and time your jump to block one.</p></div>
+        </article>
+        <article class="card c-pink reveal">
+          <div class="art"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.4 15A9 9 0 1 1 21 12"/><path d="M21 3v6h-6"/></svg></div>
+          <div class="band"><h3>Your athletes</h3><p>Create players, pick hair, kit and boots, then train their speed, agility, accuracy and jump.</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- POSITIONS -->
+  <section class="section section-dark" id="positions">
+    <div class="wrap pos-grid">
+      <div>
+        <p class="eyebrow">Know your zone</p>
+        <h2 class="title t-gold">Seven positions</h2>
+        <p class="body">Every bib has its own patch of court. Step outside it and it's offside. Pick a position to see where it can go.</p>
+        <div class="pos-tabs" role="tablist" id="posTabs"></div>
+        <div class="pos-info" id="posInfo" aria-live="polite"></div>
+      </div>
+      <div class="court-card">
+        <svg id="zoneCourt" viewBox="0 0 640 335" role="img" aria-label="Netball court showing where the selected position may play">
+          <defs>
+            <clipPath id="courtClip"><rect x="15" y="15" width="610" height="305"/></clipPath>
+          </defs>
+          <rect x="15" y="15" width="610" height="305" class="z-base"/>
+          <g clip-path="url(#courtClip)">
+            <rect id="zL" x="15" y="15" width="203.3" height="305" class="zone"/>
+            <rect id="zM" x="218.3" y="15" width="203.4" height="305" class="zone"/>
+            <rect id="zR" x="421.7" y="15" width="203.3" height="305" class="zone"/>
+            <path id="cL" d="M15 69.5 A98 98 0 0 1 15 265.5 Z" class="zone circle" transform="translate(0 0)"/>
+            <path id="cR" d="M625 69.5 A98 98 0 0 0 625 265.5 Z" class="zone circle"/>
+          </g>
+          <g class="lines">
+            <rect x="15" y="15" width="610" height="305"/>
+            <line x1="218.3" y1="15" x2="218.3" y2="320"/>
+            <line x1="421.7" y1="15" x2="421.7" y2="320"/>
+            <circle cx="320" cy="167.5" r="9"/>
+            <path d="M15 69.5 A98 98 0 0 1 15 265.5"/>
+            <path d="M625 69.5 A98 98 0 0 0 625 265.5"/>
+          </g>
+          <circle cx="23" cy="167.5" r="6" class="ring"/>
+          <circle cx="617" cy="167.5" r="6" class="ring"/>
+          <text x="117" y="310" class="lbl">DEFENCE</text>
+          <text x="320" y="310" class="lbl">CENTRE</text>
+          <text x="523" y="310" class="lbl">ATTACK &#9656;</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCREENS -->
+  <section class="section" id="screens">
+    <div class="wrap">
+      <p class="eyebrow">From tip-off to full time</p>
+      <h2 class="title t-orange">In the game</h2>
+      <div class="gallery">
+        <button class="shot big reveal" data-cap="Contest every ball under the post."><img src="img/contest.jpg" alt="Jamaica and a red-and-white defender leaping for the ball by the post" loading="lazy"><span>Contest</span></button>
+        <button class="shot reveal" data-cap="Time your jump to take the high ball."><img src="img/high_ball.jpg" alt="Player taking a high catch over a defender" loading="lazy"><span>High ball</span></button>
+        <button class="shot reveal" data-cap="Look up, find your shooter, feed the circle."><img src="img/feed.jpg" alt="Jamaica player lining up a pass" loading="lazy"><span>Feed</span></button>
+        <button class="shot reveal" data-cap="Shoot with a hand in your face."><img src="img/under_pressure.jpg" alt="Shooter with a defender jumping to block" loading="lazy"><span>Under pressure</span></button>
+        <button class="shot reveal" data-cap="Long range from the edge of the circle."><img src="img/wide_shot.jpg" alt="Shot from the edge of the circle" loading="lazy"><span>Long range</span></button>
+        <button class="shot reveal" data-cap="Australia lining up the shot."><img src="img/shot.jpg" alt="Australia shooter with defender behind" loading="lazy"><span>Goal</span></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODES -->
+  <section class="section" id="modes">
+    <div class="wrap">
+      <p class="eyebrow">However you play</p>
+      <h2 class="title t-pink">Game modes</h2>
+      <div class="modes">
+        <article class="mode soon reveal">
+          <i>01</i><h3>Online</h3><span class="soon-tag">Coming soon</span>
+          <p>Quick match against a random opponent, or send a code to a friend. If someone drops, the AI keeps their side going.</p>
+        </article>
+        <article class="mode reveal">
+          <i>02</i><h3>Local &amp; LAN</h3>
+          <p>Same Wi-Fi? Find a game nearby, or join directly by address. No account needed.</p>
+        </article>
+        <article class="mode reveal">
+          <i>03</i><h3>Versus AI</h3>
+          <p>Pick difficulty, quarter length and how many quarters. Or sit back and watch the AI play itself.</p>
+        </article>
+        <article class="mode reveal">
+          <i>04</i><h3>Training</h3>
+          <p>Real drills: shooting practice, catch-land-pivot-pass, drive and lead, and high ball. Your score becomes stat points.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLAY -->
+  <section class="section final" id="play">
+    <div class="rays" aria-hidden="true"></div>
+    <div class="wrap final-inner">
+      <h2 class="title t-gold">Take the centre pass</h2>
+      <p class="body">Free to play. Your first athlete is on us.</p>
+      <div class="stores">
+        <a class="store" href="#" data-soon>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.6 2.3 13.3 12l-9.7 9.7c-.4-.2-.6-.6-.6-1.1V3.4c0-.5.2-.9.6-1.1zm10.7 10.7 2.6 2.6-11 6.3 8.4-8.9zm3.6-3.6 3 1.7c.8.5.8 1.3 0 1.8l-3 1.7-2.9-2.6 2.9-2.6zM5.9 2.1l11 6.3-2.6 2.6-8.4-8.9z"/></svg>
+          <span><small>Get it on</small>Google Play</span>
+        </a>
+        <a class="store" href="#" data-soon>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="13" rx="1"/><path d="M8 21h8M12 17v4"/></svg>
+          <span><small>Download for</small>Windows</span>
+        </a>
+        <a class="store" href="#" data-soon>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+          <span><small>Play in your</small>Browser</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-inner">
+    <span>Netball Ultimate &middot; v0.1</span>
+    <span>Made with Unity</span>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox" hidden>
+  <button class="lb-close" id="lbClose" aria-label="Close">&times;</button>
+  <figure><img id="lbImg" alt=""><figcaption id="lbCap"></figcaption></figure>
+</div>
+<div class="toast" id="toast" role="status"></div>
+
+<script src="main.js"></script>
+</body>
+</html>
