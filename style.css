@@ -178,6 +178,7 @@ svg{display:block}
 .legal li::marker{color:var(--gold)}
 .legal strong{color:#fff;font-weight:600}
 .legal a{color:var(--cyan);text-decoration:underline;text-underline-offset:3px;word-break:break-word}
+.foot-link{color:var(--gold);text-decoration:underline;text-underline-offset:3px}
 .foot a:hover{color:#fff}
 .links-static a{color:var(--ice)}
 @media (max-width:760px){
